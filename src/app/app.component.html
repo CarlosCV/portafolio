@@ -1,9 +1,9 @@
-<header #target id="header" class="header ed-header s-bg-grey s-py-2 ">
-    <div id="m-grid" class="ed-grid lg-grid-3 rows-gap">
-        <div id="m-content-img" class="lg-rows-2 s-cross-center s-main-center lg-main-end m-order-1 lg-order-1">
-            <img id="imagen-me" style="border-radius: 50%;" src="assets/carlos.jpg">
+<header #target id="header" class="header ed-header s-bg-grey s-py-2 fullContent">
+    <div id="m-grid" class="ed-grid lg-grid-3">
+        <div id="m-content-img" class="lg-rows-2 s-cross-center s-main-center lg-main-start m-order-1 lg-order-1">
+            <img class="m-avatar" id="imagen-me" src="assets/carlos.jpg">
         </div>
-        <div id="m-tabsid" class="lg-cols-2 s-main-center lg-main-end m-order-2 lg-order-2">
+        <div id="m-tabsid"  class="lg-cols-2 s-main-center lg-main-end m-order-2 lg-order-2 m-xs-top">
             <div class="m-tabs">
                 <span class="m-tab">Portafolio</span>
                 <span class="m-tab">Proyectos</span>
@@ -11,14 +11,15 @@
             </div>
         </div>
         <div id="m-info-personal" style="align-self: flex-start;"
-            class="s-main-center m-main-center lg-main-center m-order-3 lg-order-3">
+            class="s-main-center xs-main-start  m-main-center lg-main-start m-order-3 lg-order-3">
             <div>Carlos Manuel Cruz Venegas
                 <div class="m-puesto">Software Developer</div>
             </div>
-            <div id="m-banner-social" class="ed-item redes-sociales s-main-center m-main-center lg-main-center">
+            <div id="m-banner-social" class="ed-item redes-sociales s-main-center m-main-center lg-main-start">
                 <a title="Facebook" class="redes_item m-facebook" href="https://www.facebook.com/rbjpepo"
                     target="_blank">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
+                   
                 </a>
                 <a title="Linkedin" class="redes_item m-linkedin"
                     href="https://www.linkedin.com/in/carlos-manuel-cruz-venegas-b852a5152/" target="_blank">
@@ -29,25 +30,15 @@
                 </a>
             </div>
         </div>
-        <div id="m-content-sms" class="m-content-sms s-main-center m-main-center lg-main-center m-order-4 lg-order-4">
-            <button (click)="SendEmail();" class="m-correo"><i class="fa fa-envelope-o"></i>&nbsp;<span id="m-sms">Enviame un mensaje!</span>
+        <div id="m-content-sms" class="m-content-sms s-main-center m-main-center lg-main-end m-order-4 lg-order-4">
+            <button (click)="SendEmail();" class="m-correo"><i class="fa fa-envelope-o"></i>&nbsp;<span id="m-sms">Enviame un mensaje</span>
             </button>
         </div>
     </div>
-
-    <!-- <div class="ed-grid s-grid-3">
-        <div class="m-order-1 lg-order-1 lg-rows-2">1</div>
-        <div class="m-order-2 lg-order-2 lg-cols-2">2</div>
-        <div class="m-order-3 lg-order-3">3</div>
-        <div class="m-order-4 lg-order-4">4</div>
-    </div>
-    <br>
-    <div class="ed-grid s-grid-4">
-        <div class="m-order-1 lg-order-1 lg-rows-2">1</div>
-        <div class="m-order-3 lg-order-3 ">2</div>
-        <div class="m-order-2 lg-order-2">3</div>
-        <div class="m-order-4 lg-order-4">4</div>
-    </div> -->
+<div (click)="UpAndDown(301)" class="m-float-navigate">
+    <i id="down" class="fa fa-arrow-circle-down" style="display: none;" ></i>
+    <i id="up" class="fa fa-arrow-circle-up"style="display: none;" ></i>
+</div>
 </header>
 
 <!--  <div id="header" class="header">

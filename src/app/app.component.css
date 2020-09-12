@@ -5,11 +5,12 @@
 .redes-sociales .redes_item{
     border-radius: 50%;
     background-color: rgba(140, 142, 146, 0.233);
-    padding: 14px;
+    padding: 10px 15px 0px 14px;
     color: #ffffff;
     margin: 5px;
-    font-size: 14px;
+    font-size: 24px;
     cursor: pointer;
+    height: 47px;
 }
 .redes-sociales{
     margin-top: 20px;
@@ -28,7 +29,7 @@
     background-color: #24292E !important;
 }
 .m-correo{
-    background-color: #5270EB;
+    background-color: #5270ebd9;
     text-decoration: none;
     border: none;
     border-radius: 25px;
@@ -39,7 +40,7 @@
   
 }
 .m-skills{
-    margin-top: 437px;
+    margin-top: 260px;
     margin-bottom: 20px;
 }
 .m-card-proyectos{
@@ -47,7 +48,7 @@
 }
 .m-tabs{
     text-align: right;
-    margin-right: 40px;
+/*     margin-right: 95px; */
     font-size: 20px;
     cursor: pointer;
 }
@@ -83,8 +84,6 @@
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     transition: height 0.3s;
-    /* text-align:center; */
-/*     line-height:160px; */
     width: 100%;
     z-index: 1000;
 
@@ -97,12 +96,16 @@
 
 .m-circle{
     border-radius: 50%;
-    height: 70px;
+    height: 70px !important;
     
 }
 .m-content-sms{
     align-self: flex-start ;
     margin-top: 42px ;
+}
+.m-avatar{
+    height: 180px;
+    border-radius: 50%
 }
 .header.shrink div
 {
@@ -112,3 +115,50 @@
     transition: all 0.3s;
 }
 
+
+
+
+@media screen and (min-width: 1024px)
+{
+    .ed-grid.cols-lg-3, .ed-grid.lg-grid-3 {
+        display: grid;
+        grid-template-columns: 15% 1fr 1fr;
+    }
+    .ed-grid.lg-grid-4 {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+   .fullContent{
+    height: 100vh;
+    align-items: center;
+    display: grid;
+   }
+
+   .m-xs-top{
+    margin-top: 30px;
+   }
+   .m-float-navigate{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #5270eb94;
+    bottom: 30px;
+    position: absolute;
+    text-align: center;
+    right: 23px;
+    display: grid;
+    align-items: center;
+
+    color: #ffffff;
+   }
+   .m-float-navigate i{
+    font-size: 24px;
+   }
+   /* #up{
+       display:inline-block ;
+   } */
+}

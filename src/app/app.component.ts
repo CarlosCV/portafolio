@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  scrollPercent: any = 0;
+  shrinkHeader:number = 300;
   @ViewChild('target', { static: false }) elementView: ElementRef;
   constructor() {
 
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     {
       lenguaje: "Node Js",
       porcentaje: "80%",
-      color: "#3679F6"
+      color: "#088A85"
     },
     {
       lenguaje: "Ionic 5",
@@ -91,19 +91,24 @@ export class AppComponent implements OnInit {
   ]
 
   ngOnInit() {
-    var targetHeight;
+    this.UpAndDown(this.shrinkHeader);
+  }
+  getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+  }
+  SendEmail(){
+    window.open('mailto:cruzvenegasc@gmail.com?body=Hola Carlos ');
+  }
+  UpAndDown(shrinkHeader){
+  /*   var targetHeight;
     setTimeout(() => {
       targetHeight = this.elementView.nativeElement.offsetHeight;
-    }, 1000 / 60);
-    console.log(targetHeight)
-
-    var shrinkHeader = 300;
+    }, 1000 / 60); */
     window.onscroll = () => {
       var scroll = this.getCurrentScroll();
       if (scroll >= shrinkHeader) {
         document.getElementById("header").classList.add("shrink")
         document.getElementById("imagen-me").classList.add("m-circle")
-        document.getElementById("m-sms").style.display = "none"
         document.getElementById("m-content-sms").style.marginTop = "18px"
         document.getElementById("m-grid").classList.remove("lg-grid-3")
         document.getElementById("m-grid").classList.add("lg-grid-4")
@@ -114,15 +119,17 @@ export class AppComponent implements OnInit {
         document.getElementById("m-tabsid").classList.remove("lg-order-2")
         document.getElementById("m-tabsid").classList.add("m-order-3")
         document.getElementById("m-tabsid").classList.add("lg-order-3")
+        document.getElementById("m-tabsid").style.marginTop="0px"
         document.getElementById("m-info-personal").classList.remove("m-order-3")
         document.getElementById("m-info-personal").classList.remove("lg-order-3")
         document.getElementById("m-info-personal").classList.add("m-order-2")
-        document.getElementById("m-info-personal").classList.add("lg-order-2")
+        document.getElementById("m-info-personal").classList.add("lg-order-2")  
+        document.getElementById("up").style.display="none"
+        document.getElementById("down").style.display="inline-block "
       }
       else {
         document.getElementById("header").classList.remove("shrink")
         document.getElementById("imagen-me").classList.remove("m-circle")
-        document.getElementById("m-sms").style.display = "inline-block"
         document.getElementById("m-content-sms").style.marginTop = "42px"
         document.getElementById("m-grid").classList.remove("lg-grid-4")
         document.getElementById("m-grid").classList.add("lg-grid-3")
@@ -133,19 +140,16 @@ export class AppComponent implements OnInit {
         document.getElementById("m-tabsid").classList.remove("lg-order-3")
         document.getElementById("m-tabsid").classList.add("m-order-2")
         document.getElementById("m-tabsid").classList.add("lg-order-2")
+        document.getElementById("m-tabsid").style.marginTop="16px"
         document.getElementById("m-info-personal").classList.remove("m-order-2")
         document.getElementById("m-info-personal").classList.remove("lg-order-2")
         document.getElementById("m-info-personal").classList.add("m-order-3")
         document.getElementById("m-info-personal").classList.add("lg-order-3")
+        document.getElementById("up").style.display="inline-block "
+        document.getElementById("down").style.display="none "
 
 
       }
     };
-  }
-  getCurrentScroll() {
-    return window.pageYOffset || document.documentElement.scrollTop;
-  }
-  SendEmail(){
-    window.open('mailto:cruzvenegasc@gmail.com?body=Hola Carlos ');
   }
 }
