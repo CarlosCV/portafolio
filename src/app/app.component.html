@@ -5,8 +5,8 @@
         </div>
         <div id="m-tabsid"  class="lg-cols-2 s-main-center lg-main-end m-order-2 lg-order-2 m-xs-top">
             <div class="m-tabs">
-                <span class="m-tab">Portafolio</span>
-                <span class="m-tab">Proyectos</span>
+                <span class="m-tab" (click)="scrollToId('m-proyectos','Proyectos')">Proyectos</span>
+                <span class="m-tab" (click)="scrollToId('skills','')">Skilss</span>
                 <span class="m-tab">Estudios</span>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <div class="m-puesto">Software Developer</div>
             </div>
             <div id="m-banner-social" class="ed-item redes-sociales s-main-center m-main-center lg-main-start">
-                <a title="Facebook" class="redes_item m-facebook" href="https://www.facebook.com/rbjpepo"
+                <a title="Facebook" class="redes_item m-facebook" href="https://www.facebook.com/carlosmanuel.cruzvenegas"
                     target="_blank">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                    
@@ -25,7 +25,7 @@
                     href="https://www.linkedin.com/in/carlos-manuel-cruz-venegas-b852a5152/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
-                <a title="GitHub" class="redes_item m-github" href="https://github.com/pepobj" target="_blank">
+                <a title="GitHub" class="redes_item m-github" href="https://github.com/CarlosCV" target="_blank">
                     <i class="fa fa-github-alt" aria-hidden="true"></i>
                 </a>
             </div>
@@ -35,33 +35,16 @@
             </button>
         </div>
     </div>
-<div (click)="UpAndDown(301)" class="m-float-navigate">
-    <i id="down" class="fa fa-arrow-circle-down" style="display: none;" ></i>
-    <i id="up" class="fa fa-arrow-circle-up"style="display: none;" ></i>
+<div   class="m-float-navigate m-main-end" >
+    <i (click)="UpAndDown('down')"  id="down" class="fa fa-arrow-circle-down" style="display: none;" ></i>
+    <i (click)="UpAndDown('up')" id="up" class="fa fa-arrow-circle-up" ></i>
 </div>
 </header>
 
-<!--  <div id="header" class="header">
-    <h1>Animated Fixed Header (Scroll Down)</h1>
-  </div> -->
-<!--  <div class="content">
-  </div> -->
-
-<!-- <div class="ed-grid rows-gap s-gap-20 m-gap-1 s-grid-2 m-grid-4 lg-grid-6 m-body-color">
-    <div class="lg-rows-3">1</div>
-    <div class="lg-cols-5">2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-</div> -->
-<div class="ed-grid m-skills">
+<div id="m-context" class="ed-grid m-skills">
+    <div id="m-proyectos"></div>
     <h3>Ultimos Proyectos Angular</h3>
-    <div class="m-card-proyectos ed-grid s-pxy-2 s-border s-radius s-shadow-bottom">
+    <div  class="m-card-proyectos ed-grid s-pxy-2 s-border s-radius s-shadow-bottom">
         <h4>Proyecto web: Planroom</h4>
         <div>Planroom es una web donde las
             empresas pueden encontrar por proyecto los documentos,

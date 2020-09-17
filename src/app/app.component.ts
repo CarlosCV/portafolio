@@ -6,7 +6,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  shrinkHeader:number = 300;
+  targetHeight: number
+  shrinkHeader: number = 220;
   @ViewChild('target', { static: false }) elementView: ElementRef;
   constructor() {
 
@@ -91,23 +92,42 @@ export class AppComponent implements OnInit {
   ]
 
   ngOnInit() {
-    this.UpAndDown(this.shrinkHeader);
+    this.UpAndDown(false)
   }
   getCurrentScroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
   }
-  SendEmail(){
+  SendEmail() {
     window.open('mailto:cruzvenegasc@gmail.com?body=Hola Carlos ');
   }
-  UpAndDown(shrinkHeader){
-  /*   var targetHeight;
+
+  UpAndDown(mobileStatus) {
+    if (mobileStatus =="up") {
+      document.getElementById("header").classList.add("shrink")
+      document.getElementById("imagen-me").classList.add("m-circle")
+      document.getElementById("up").style.display = "none"
+      document.getElementById("down").style.display = "grid"
+    }else if (mobileStatus == "down"){
+      document.getElementById("header").classList.remove("shrink")
+      document.getElementById("imagen-me").classList.remove("m-circle")
+      document.getElementById("up").style.display = "grid"
+      document.getElementById("down").style.display = "none"
+    } else {
+      this.UpAndDownDefault(this.shrinkHeader);
+    }
+
+  }
+  UpAndDownDefault(shrinkHeader) {
+    var width = 0;
     setTimeout(() => {
-      targetHeight = this.elementView.nativeElement.offsetHeight;
-    }, 1000 / 60); */
+      this.targetHeight = this.elementView.nativeElement.offsetHeight;
+      width = this.elementView.nativeElement.offsetWidth;
+    }, 1000 / 60);
     window.onscroll = () => {
       var scroll = this.getCurrentScroll();
       if (scroll >= shrinkHeader) {
         document.getElementById("header").classList.add("shrink")
+        /* document.getElementById("m-context").style.marginTop="550px" */
         document.getElementById("imagen-me").classList.add("m-circle")
         document.getElementById("m-content-sms").style.marginTop = "18px"
         document.getElementById("m-grid").classList.remove("lg-grid-3")
@@ -119,13 +139,16 @@ export class AppComponent implements OnInit {
         document.getElementById("m-tabsid").classList.remove("lg-order-2")
         document.getElementById("m-tabsid").classList.add("m-order-3")
         document.getElementById("m-tabsid").classList.add("lg-order-3")
-        document.getElementById("m-tabsid").style.marginTop="0px"
+        document.getElementById("m-tabsid").style.marginTop = "0px"
         document.getElementById("m-info-personal").classList.remove("m-order-3")
         document.getElementById("m-info-personal").classList.remove("lg-order-3")
         document.getElementById("m-info-personal").classList.add("m-order-2")
-        document.getElementById("m-info-personal").classList.add("lg-order-2")  
-        document.getElementById("up").style.display="none"
-        document.getElementById("down").style.display="inline-block "
+        document.getElementById("m-info-personal").classList.add("lg-order-2")
+        if (width <= 768) {
+          document.getElementById("up").style.display = "none"
+          document.getElementById("down").style.display = "grid"
+        }
+
       }
       else {
         document.getElementById("header").classList.remove("shrink")
@@ -140,16 +163,37 @@ export class AppComponent implements OnInit {
         document.getElementById("m-tabsid").classList.remove("lg-order-3")
         document.getElementById("m-tabsid").classList.add("m-order-2")
         document.getElementById("m-tabsid").classList.add("lg-order-2")
-        document.getElementById("m-tabsid").style.marginTop="16px"
+        document.getElementById("m-tabsid").style.marginTop = "16px"
         document.getElementById("m-info-personal").classList.remove("m-order-2")
         document.getElementById("m-info-personal").classList.remove("lg-order-2")
         document.getElementById("m-info-personal").classList.add("m-order-3")
         document.getElementById("m-info-personal").classList.add("lg-order-3")
-        document.getElementById("up").style.display="inline-block "
-        document.getElementById("down").style.display="none "
-
-
+        if (width <= 768) {
+          document.getElementById("up").style.display = "grid"
+          document.getElementById("down").style.display = "none"
+        }
       }
     };
   }
+  scrollToId(id: string, page) {
+    this.scrollToElementById(id);
+    if(page == "Proyectos"){
+      document.getElementById("m-context").style.marginTop="384px"
+    }
+
+  }
+
+  scrollToElementById(id: string) {
+    const element = this.__getElementById(id);
+    this.scrollToElement(element);
+  }
+  scrollToElement(element: HTMLElement) {
+    element.scrollIntoView({behavior:"smooth"});
+  }
+  
+  private __getElementById(id: string): HTMLElement {
+    const element = <HTMLElement>document.querySelector(`#${id}`);
+    return element;
+  }
+
 }

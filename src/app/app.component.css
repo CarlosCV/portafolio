@@ -41,7 +41,8 @@
 }
 .m-skills{
     margin-top: 260px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+
 }
 .m-card-proyectos{
     margin-bottom: 20px;
@@ -54,6 +55,10 @@
 }
 .m-tabs .m-tab{
     margin-left: 16px;
+    
+}
+.m-tabs .m-tab:hover{
+    color: cadetblue;
 }
 .m-bar{
     width: 100%;
@@ -78,15 +83,16 @@
 
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    transition: height 0.3s;
+/*     position: -webkit-sticky;
+    position: sticky; */
     width: 100%;
-    z-index: 1000;
-
+    overflow: hidden;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+ /*    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s; */
 }
 .header.shrink {
     height: 100px;
@@ -114,7 +120,9 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
-
+.m-float-navigate{
+    display: none;
+}
 
 
 
@@ -146,19 +154,25 @@
     width: 50px;
     border-radius: 50%;
     background-color: #5270eb94;
-    bottom: 30px;
+    bottom: 15px;
     position: absolute;
     text-align: center;
     right: 23px;
     display: grid;
     align-items: center;
-
+    justify-content: center;
     color: #ffffff;
    }
    .m-float-navigate i{
     font-size: 24px;
    }
-   /* #up{
-       display:inline-block ;
-   } */
+   .m-skills{
+    margin-top: 420px;
 }
+   #m-info-personal{
+    margin-top: 12px;
+   }
+
+
+}
+
