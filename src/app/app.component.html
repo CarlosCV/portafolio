@@ -1,7 +1,7 @@
 <header #target id="header" class="header ed-header s-bg-grey s-py-2 fullContent">
     <div id="m-grid" class="ed-grid lg-grid-3">
         <div id="m-content-img" class="lg-rows-2 s-cross-center s-main-center lg-main-start m-order-1 lg-order-1">
-            <img class="m-avatar" id="imagen-me" src="assets/carlos.jpg">
+            <img class="m-avatar" id="imagen-me" alt="Carlos cruz" src="http://carloscruzvenegas.com/assets/carlos.jpg">
         </div>
         <div id="m-tabsid"  class="lg-cols-2 s-main-center lg-main-end m-order-2 lg-order-2 m-xs-top">
             <div class="m-tabs">
@@ -14,12 +14,12 @@
             class="s-main-center xs-main-start  m-main-center lg-main-start m-order-3 lg-order-3">
             <div>Carlos Manuel Cruz Venegas
                 <div class="m-puesto">Software Developer</div>
+        
             </div>
             <div id="m-banner-social" class="ed-item redes-sociales s-main-center m-main-center lg-main-start">
                 <a title="Facebook" class="redes_item m-facebook" href="https://www.facebook.com/carlosmanuel.cruzvenegas"
                     target="_blank">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
-                   
                 </a>
                 <a title="Linkedin" class="redes_item m-linkedin"
                     href="https://www.linkedin.com/in/carlos-manuel-cruz-venegas-b852a5152/" target="_blank">
@@ -78,7 +78,7 @@
                 <div>{{item.lenguaje}}</div>
             </div>
             <div class="m-bar-progress"
-                [ngStyle]="{'background-color': item.color, 'width': item.porcentaje, 'color': item.color}">
+                [ngStyle]="{'background-color': item.color,  'color': item.color}">
            <!--      <div>{{item.lenguaje}}</div> -->
             </div>
         </div>
